@@ -101,6 +101,7 @@ view: eu_dataset {
   measure: sales {
     type: sum
     description: "Total Sales"
+    value_format: "0.000,,\" M\""
     sql: ${TABLE}.sales ;;
   }
 }
