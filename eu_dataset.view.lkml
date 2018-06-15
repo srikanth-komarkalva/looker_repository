@@ -33,13 +33,7 @@ view: eu_dataset {
     sql: TO_DATE(${TABLE}.order_date,'DD-MM-YYYY') ;;
   }
 
-#  dimension_group: order_date_year {
-#    type: time
-#    timeframes: [month, year, date]
-#    sql: extract(${TABLE}.order_date ;;
-#  }
-
-  dimension: order_id {
+ dimension: order_id {
     type: string
     sql: ${TABLE}.order_id ;;
   }
