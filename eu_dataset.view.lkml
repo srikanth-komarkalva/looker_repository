@@ -27,14 +27,10 @@ view: eu_dataset {
     sql: ${TABLE}.customer_name ;;
   }
 
-  dimension: order_date {
-    type: string
-    sql: ${TABLE}.order_date ;;
-  }
-
-  dimension: orderdate {
-    type: date_year
-    sql: TO_DATE(${TABLE}.order_date,'YYYY-MM-DD') ;;
+  dimension_group: order {
+    type: time
+    timeframes: [year,month,date]
+    sql: TO_DATE(${TABLE}.order_date,'DD-MM-YYYY') ;;
   }
 
 #  dimension_group: order_date_year {
