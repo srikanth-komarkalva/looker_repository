@@ -102,13 +102,13 @@ view: sample_superstore_v1 {
 
 
   measure: profit {
-    type: string
+    type: sum
     sql: ${TABLE}.profit
     value_format_name: id;;
   }
 
   measure: quantity {
-    type: string
+    type: sum
     sql: ${TABLE}.quantity
     value_format_name: decimal_0;;
   }
