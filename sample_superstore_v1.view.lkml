@@ -113,6 +113,11 @@ view: sample_superstore_v1 {
     value_format_name: decimal_0;;
   }
 
+  measure: profit_ratio {
+    type: average
+    sql: sum(${TABLE}.profit) / sum(${TABLE}.sales)
+    value_format_name: decimal_2 ;;
+  }
   measure: count {
     type: count
     drill_fields: [product_name, customer_name]
