@@ -115,8 +115,8 @@ view: sample_superstore_v1 {
 
   measure: profit_ratio {
     type: average
-    sql: sum(${TABLE}.profit) / sum(${TABLE}.sales)
-    value_format_name: decimal_2 ;;
+    sql: (${TABLE}.sum(profit) / (${TABLE}.sum(sales)
+    ;;
   }
   measure: count {
     type: count
