@@ -27,11 +27,6 @@ view: sample_superstore_v1 {
     sql: ${TABLE}.customer_name ;;
   }
 
-  dimension: discount {
-    type: string
-    sql: ${TABLE}.discount ;;
-  }
-
   dimension: order_date {
     type: string
     sql: ${TABLE}.order_date ;;
@@ -57,16 +52,6 @@ view: sample_superstore_v1 {
     sql: ${TABLE}.product_name ;;
   }
 
-  dimension: profit {
-    type: string
-    sql: ${TABLE}.profit ;;
-  }
-
-  dimension: quantity {
-    type: string
-    sql: ${TABLE}.quantity ;;
-  }
-
   dimension: region {
     type: string
     sql: ${TABLE}.region ;;
@@ -77,10 +62,6 @@ view: sample_superstore_v1 {
     sql: ${TABLE}.row_id ;;
   }
 
-  dimension: sales {
-    type: string
-    sql: ${TABLE}.sales ;;
-  }
 
   dimension: segment {
     type: string
@@ -105,6 +86,31 @@ view: sample_superstore_v1 {
   dimension: sub_category {
     type: string
     sql: ${TABLE}.sub_category ;;
+  }
+
+  measure: discount {
+    type: sum
+    sql: ${TABLE}.discount
+    value_format_name: usd ;;
+  }
+
+  measure: sales {
+    type: sum
+    sql: ${TABLE}.sales
+    value_format_name: decimal_0 ;;
+  }
+
+
+  measure: profit {
+    type: string
+    sql: ${TABLE}.profit
+    value_format_name: id;;
+  }
+
+  measure: quantity {
+    type: string
+    sql: ${TABLE}.quantity
+    value_format_name: decimal_0;;
   }
 
   measure: count {
