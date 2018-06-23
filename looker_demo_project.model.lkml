@@ -14,4 +14,4 @@ datagroup: looker_demo_project_default_datagroup {
 persist_with: looker_demo_project_default_datagroup
 
 explore: eu_dataset {}
-explore: sample_superstore_v1 {}
+explore: sample_superstore_redshift {}
