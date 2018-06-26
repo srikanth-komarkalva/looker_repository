@@ -5,17 +5,30 @@ view: sample_superstore_redshift {
     type: string
     sql: ${TABLE}.category ;;
   }
-
+#demographics
   dimension: city {
-    type: string
-    sql: ${TABLE}.city ;;
+    sql: ${TABLE}.city
+    drill_fields: [zip] ;;
   }
 
   dimension: country {
     type: string
     map_layer_name: countries
+    drill_fields: [state, city]
     sql: ${TABLE}.country ;;
   }
+
+  dimension: postal_code {
+    type: number
+    sql: ${TABLE}.postal_code ;;
+  }
+
+  dimension: state {
+    map_layer_name: us_states
+    sql: ${TABLE}.state ;;
+  }
+
+##################
 
   dimension: customer_id {
     type: string
@@ -35,11 +48,6 @@ view: sample_superstore_redshift {
   dimension: order_id {
     type: string
     sql: ${TABLE}.order_id ;;
-  }
-
-  dimension: postal_code {
-    type: number
-    sql: ${TABLE}.postal_code ;;
   }
 
   dimension: product_id {
@@ -77,11 +85,6 @@ view: sample_superstore_redshift {
   dimension: ship_mode {
     type: string
     sql: ${TABLE}.ship_mode ;;
-  }
-
-  dimension: state {
-    type: string
-    sql: ${TABLE}.state ;;
   }
 
   dimension: sub_category {
