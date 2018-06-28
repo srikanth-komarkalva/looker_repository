@@ -5,30 +5,6 @@ view: sample_superstore_redshift {
     type: string
     sql: ${TABLE}.category ;;
   }
-#demographics
-  dimension: city {
-    sql: ${TABLE}.city
-    drill_fields: [zip] ;;
-  }
-
-  dimension: country {
-    type: string
-    map_layer_name: countries
-    drill_fields: [state, city]
-    sql: ${TABLE}.country ;;
-  }
-
-  dimension: postal_code {
-    type: number
-    sql: ${TABLE}.postal_code ;;
-  }
-
-  dimension: state {
-    map_layer_name: us_states
-    sql: ${TABLE}.state ;;
-  }
-
-##################
 
   dimension: customer_id {
     type: string
@@ -40,9 +16,10 @@ view: sample_superstore_redshift {
     sql: ${TABLE}.customer_name ;;
   }
 
-  dimension: order_date {
-    type: string
-    sql: ${TABLE}.order_date ;;
+  dimension_group: order_ {
+    type: time
+    timeframes: [year,month,date]
+    sql: TO_DATE(${TABLE}.order_date,'DD-MM-YYYY');;
   }
 
   dimension: order_id {
@@ -92,6 +69,30 @@ view: sample_superstore_redshift {
     sql: ${TABLE}.sub_category ;;
   }
 
+#demographics
+  dimension: city {
+    sql: ${TABLE}.city
+      ;;
+  }
+
+  dimension: country {
+    type: string
+    map_layer_name: countries
+    drill_fields: [state, city]
+    sql: ${TABLE}.country ;;
+  }
+
+  dimension: postal_code {
+    type: number
+    sql: ${TABLE}.postal_code ;;
+  }
+
+  dimension: state {
+    map_layer_name: us_states
+    sql: ${TABLE}.state ;;
+  }
+
+##################
   measure: count {
     type: count
     drill_fields: [product_name, customer_name]
@@ -111,6 +112,8 @@ view: sample_superstore_redshift {
 
   measure: profit {
     type: sum
+    description:  "Total Profit"
+    value_format: "0.000,,\" M\""
     sql: ${TABLE}.profit
       ;;
   }
@@ -123,7 +126,7 @@ view: sample_superstore_redshift {
 
   measure: profit_ratio {
     type: average
-    sql: (${TABLE}.sum(profit) / (${TABLE}.sum(sales)
+    sql: (${TABLE}.sum(profit) / ${TABLE}.sum(sales))
       ;;
   }
 }

@@ -86,7 +86,7 @@ view: eu_dataset {
   measure: profit {
     type: sum
     description:  "Total Profit"
-    value_format: "0.000,,\" M\""
+    value_format: "0.000,,\" K\""
     sql: ${TABLE}.profit ;;
   }
 
