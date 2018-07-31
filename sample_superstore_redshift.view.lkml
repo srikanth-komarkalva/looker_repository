@@ -83,7 +83,7 @@ view: sample_superstore_redshift {
   }
 
   dimension: postal_code {
-    type: number
+    type: zipcode
     sql: ${TABLE}.postal_code ;;
   }
 
