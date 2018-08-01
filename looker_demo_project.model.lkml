@@ -15,3 +15,4 @@ persist_with: looker_demo_project_default_datagroup
 
 explore: eu_dataset {}
 explore: sample_superstore_redshift {}
+explore: demo_dataset {}
