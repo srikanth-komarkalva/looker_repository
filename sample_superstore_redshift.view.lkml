@@ -112,7 +112,7 @@ view: sample_superstore_redshift {
 
   measure: profit {
     type: sum
-    description:  "Total Profit"
+    description:  "Profit"
     value_format: "0.000,,\" M\""
     sql: ${TABLE}.profit
       ;;
