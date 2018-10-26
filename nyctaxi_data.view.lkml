@@ -2,17 +2,17 @@ view: nyctaxi_data {
   sql_table_name: LookerBI.NYCTaxi_data ;;
 
   dimension: dropoff_datetime {
-    type: string
+    type: date
     sql: ${TABLE}.dropoff_datetime ;;
   }
 
   dimension: dropoff_latitude {
-    type: string
+    type: location
     sql: ${TABLE}.dropoff_latitude ;;
   }
 
   dimension: dropoff_longitude {
-    type: string
+    type: location
     sql: ${TABLE}.dropoff_longitude ;;
   }
 
@@ -27,27 +27,27 @@ view: nyctaxi_data {
   }
 
   dimension: passenger_count {
-    type: string
+    type: number
     sql: ${TABLE}.passenger_count ;;
   }
 
   dimension: pickup_datetime {
-    type: string
+    type: date
     sql: ${TABLE}.pickup_datetime ;;
   }
 
   dimension: pickup_latitude {
-    type: string
+    type: location
     sql: ${TABLE}.pickup_latitude ;;
   }
 
   dimension: pickup_longitude {
-    type: string
+    type: location
     sql: ${TABLE}.pickup_longitude ;;
   }
 
   dimension: rate_code {
-    type: string
+    type: number
     sql: ${TABLE}.rate_code ;;
   }
 
@@ -56,13 +56,13 @@ view: nyctaxi_data {
     sql: ${TABLE}.store_and_fwd_flag ;;
   }
 
-  dimension: trip_distance {
-    type: string
+  measure: trip_distance {
+    type: number
     sql: ${TABLE}.trip_distance ;;
   }
 
-  dimension: trip_time_in_secs {
-    type: string
+  measure: trip_time_in_secs {
+    type: number
     sql: ${TABLE}.trip_time_in_secs ;;
   }
 
