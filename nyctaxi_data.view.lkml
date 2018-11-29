@@ -7,20 +7,20 @@ view: nyctaxi_data {
   }
 
   dimension: dropoff_latitude {
-    type: location
+    type: string
     sql: ${TABLE}.dropoff_latitude ;;
   }
 
   dimension: dropoff_longitude {
-    type: location
+    type: string
     sql: ${TABLE}.dropoff_longitude ;;
   }
 
-  dimension: dropoff_location {
-    type: location
-    sql_latitude: ${TABLE}.dropoff_latitude ;;
-    sql_longitude: ${TABLE}.dropoff_longitude ;;
-  }
+# dimension: dropoff_location {
+#    type: location
+#    sql_latitude: ${TABLE}.dropoff_latitude ;;
+#    sql_longitude: ${TABLE}.dropoff_longitude ;;
+#  }
 
   dimension: hack_license {
     type: string
@@ -43,20 +43,20 @@ view: nyctaxi_data {
   }
 
   dimension: pickup_latitude {
-    type: location
+    type: string
     sql: ${TABLE}.pickup_latitude ;;
   }
 
   dimension: pickup_longitude {
-    type: location
+    type: string
     sql: ${TABLE}.pickup_longitude ;;
   }
 
-  dimension: pickup_location {
-    type: location
-    sql_latitude: ${TABLE}.pickup_latitude ;;
-    sql_longitude: ${TABLE}.pickup_longitude ;;
-  }
+  #dimension: pickup_location {
+  #  type: location
+  #  sql_latitude: ${TABLE}.pickup_latitude ;;
+  #  sql_longitude: ${TABLE}.pickup_longitude ;;
+  #}
 
   dimension: rate_code {
     type: number
