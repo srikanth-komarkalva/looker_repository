@@ -80,8 +80,8 @@ view: nyctaxi_data {
     sql: ${TABLE}.trip_time_in_secs ;;
   }
 
-  measure: passenger_count {
-    type: sum
+  dimension: passenger_count {
+    type: number
     sql: ${TABLE}.passenger_count ;;
   }
 
