@@ -32,11 +32,6 @@ view: nyctaxi_data {
     sql: ${TABLE}.medallion ;;
   }
 
-  dimension: passenger_count {
-    type: number
-    sql: ${TABLE}.passenger_count ;;
-  }
-
   dimension: pickup_datetime {
     type: date
     sql: ${TABLE}.pickup_datetime ;;
@@ -50,6 +45,11 @@ view: nyctaxi_data {
   dimension: pickup_longitude {
     type: string
     sql: ${TABLE}.pickup_longitude ;;
+  }
+
+  dimension: vendor_id {
+    type: string
+    sql: ${TABLE}.vendor_id ;;
   }
 
   #dimension: pickup_location {
@@ -78,10 +78,12 @@ view: nyctaxi_data {
     sql: ${TABLE}.trip_time_in_secs ;;
   }
 
-  dimension: vendor_id {
-    type: string
-    sql: ${TABLE}.vendor_id ;;
+  measure: passenger_count {
+    type: number
+    sql: ${TABLE}.passenger_count ;;
   }
+
+
 
   measure: count {
     type: count
