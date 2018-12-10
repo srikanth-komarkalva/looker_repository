@@ -70,13 +70,13 @@ view: nyctaxi_data {
     sql: ${TABLE}.store_and_fwd_flag ;;
   }
 
-  measure: trip_distance {
-    type: sum
+  dimension: trip_distance {
+    type: number
     sql: ${TABLE}.trip_distance ;;
   }
 
-  measure: trip_time_in_secs {
-    type: sum
+  dimension: trip_time_in_secs {
+    type: number
     sql: ${TABLE}.trip_time_in_secs ;;
   }
 
