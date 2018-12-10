@@ -71,17 +71,17 @@ view: nyctaxi_data {
   }
 
   measure: trip_distance {
-    type: number
+    type: sum
     sql: ${TABLE}.trip_distance ;;
   }
 
   measure: trip_time_in_secs {
-    type: number
+    type: sum
     sql: ${TABLE}.trip_time_in_secs ;;
   }
 
   measure: passenger_count {
-    type: number
+    type: sum
     sql: ${TABLE}.passenger_count ;;
   }
 
