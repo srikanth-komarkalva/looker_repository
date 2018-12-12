@@ -10,3 +10,4 @@ datagroup: bigquery_taxidata_default_datagroup {
 
 persist_with: bigquery_taxidata_default_datagroup
 explore: nyctaxi_data {}
+explore: air_quality_annualsummary {}
