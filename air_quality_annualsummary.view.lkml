@@ -138,10 +138,10 @@ view: air_quality_annualsummary {
     sql: ${TABLE}.fourth_max_value ;;
   }
 
-  dimension: latitude {
-    type: number
-    sql: ${TABLE}.latitude ;;
-  }
+ # dimension: latitude {
+#    type: location
+#    sql_latitude: ${TABLE}.latitude ;;
+#  }
 
   dimension: local_site_name {
     type: string
@@ -149,8 +149,9 @@ view: air_quality_annualsummary {
   }
 
   dimension: longitude {
-    type: number
-    sql: ${TABLE}.longitude ;;
+    type: location
+    sql_longitude: ${TABLE}.longitude;;
+    sql_latitude: ${TABLE}.latitude ;;
   }
 
   dimension: method_name {
