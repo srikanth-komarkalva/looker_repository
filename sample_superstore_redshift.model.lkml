@@ -2,6 +2,7 @@ connection: "redshift"
 
 include: "*.view.lkml"
 explore: sample_superstore_redshift {}
+explore:  trips {}
 
 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
