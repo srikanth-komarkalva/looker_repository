@@ -41,8 +41,8 @@ view: s_product {
     sql: ${TABLE}.product_rating ;;
   }
 
-  dimension: retail_price {
-    type: number
+  measure: retail_price {
+    type: sum
     sql: ${TABLE}.retail_price ;;
   }
 
