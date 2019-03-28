@@ -119,3 +119,4 @@ explore: store_customer {
 }
 
 explore: stores {}
+explore: recommendations_real_time {}
