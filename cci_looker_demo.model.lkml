@@ -77,11 +77,17 @@ explore: erp_orders {
     relationship: many_to_one
   }
 
-  #join: social {
-  #  type: left_outer
-  #  sql_on: ${erp_orders.} = ${social._id} ;;
+  join: social {
+    type: left_outer
+    sql_on: ${social.email} = ${customer.email} ;;
+    relationship: many_to_one
+  }
 
-  #}
+  join: customer {
+    type: left_outer
+    sql_on: ${erp_orders.customer_number} = ${customer.customer_id} ;;
+    relationship: many_to_one
+  }
 
   join: s_addr_per {
     type: left_outer
