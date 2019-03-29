@@ -29,7 +29,7 @@ view: s_party_membership {
 
   measure: Customers_Per_Membership {
     type: count_distinct
-    sql: ${memberships} ;;
+    sql: ${customer_id} ;;
   }
 
   # ----- Sets of fields for drilling ------
