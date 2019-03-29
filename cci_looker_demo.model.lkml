@@ -86,7 +86,7 @@ explore: erp_orders {
 
   join: customer_purchase_data {
     type: left_outer
-    sql_on: ${erp_orders.customer_number} = ${customer_purchase_data.customer_id}r ;;
+    sql_on: ${erp_orders.customer_number} = ${customer_purchase_data.customer_id} ;;
     relationship: one_to_one
   }
 
