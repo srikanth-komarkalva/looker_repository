@@ -2478,6 +2478,11 @@ view: erp_orders {
     sql: ${ordered_quantity}*${unit_cost} ;;
   }
 
+  measure: order_count {
+    type: count_distinct
+    sql: ${customer_number} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
