@@ -11,6 +11,20 @@ view: recommendations_real_time {
     sql: ${TABLE}.Products ;;
   }
 
+  dimension_group: reco_timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.Reco_Timestamp ;;
+  }
+
   dimension: visitor_id {
     type: number
     sql: ${TABLE}.VisitorID ;;
