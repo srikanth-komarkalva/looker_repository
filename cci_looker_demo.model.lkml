@@ -15,103 +15,85 @@ explore: erp_orders {
   join: crm_ga_bridge {
     type:  left_outer
     sql_on: ${erp_orders.customer_number} = ${crm_ga_bridge.customer_id}  ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: s_preferences {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${s_preferences.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: s_contact {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${s_contact.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: s_party_membership {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${s_party_membership.customer_id}  ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: s_behaviour {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${s_behaviour.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: s_product  {
     type: left_outer
     sql_on: ${erp_orders.product_id} = ${s_product.uniq_id}  ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: ga_all {
     type: left_outer
     sql_on: ${erp_orders.product_id} = ${ga_all.product_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
-  join: ga_all_2  {
-    type: left_outer
-    sql_on: ${erp_orders.product_id} = ${ga_all_2.product_id} ;;
-    relationship: many_to_one
-  }
-
-  join: purchase {
+    join: purchase {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${purchase.customer_id} ;;
-    relationship: many_to_one
-  }
-
-  join: social {
-    type: left_outer
-    sql_on: ${social.email} = ${customer.email} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: customer {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${customer.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: s_addr_per {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${s_addr_per.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: store_customer {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${store_customer.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: stores {
     type: left_outer
     sql_on: ${store_customer.store_id} = ${stores.store_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: customer_purchase_data {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${customer_purchase_data.customer_id}r ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: customer_device {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${customer_device.customer_id} ;;
-    relationship: many_to_one
-  }
-
-  join: promotion {
-    type: left_outer
-    sql_on: ${stores.store_id} = ${promotion.store_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: recommendations_real_time {
