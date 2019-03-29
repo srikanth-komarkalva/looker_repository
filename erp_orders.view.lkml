@@ -2480,7 +2480,7 @@ view: erp_orders {
 
   measure: order_count {
     type: count_distinct
-    sql: ${customer_number} ;;
+    sql: ${order_number} ;;
   }
 
   # ----- Sets of fields for drilling ------
