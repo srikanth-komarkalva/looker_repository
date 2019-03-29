@@ -119,10 +119,4 @@ explore: erp_orders {
     sql_on: ${erp_orders.customer_number} = ${recommendations_real_time.customer_id} ;;
     relationship: one_to_one
   }
-
-  join: recommendations_real_time_2 {
-    type: inner
-    sql_on: ${erp_orders.customer_number} = ${recommendations_real_time.customer_id} ;;
-    relationship: one_to_one
-  }
 }
