@@ -60,11 +60,6 @@ explore: erp_orders {
     relationship: many_to_one
   }
 
-  #join: product {
-  #  type: left_outer
-  #  sql_on: erp_orders.product ;;
-  # }
-
   join: purchase {
     type: left_outer
     sql_on: ${erp_orders.customer_number} = ${purchase.customer_id} ;;
@@ -72,9 +67,9 @@ explore: erp_orders {
   }
 
   join: recommendations_real_time {
-    type: left_outer
+    type: inner
     sql_on: ${erp_orders.customer_number} = ${recommendations_real_time.customer_id} ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: social {
