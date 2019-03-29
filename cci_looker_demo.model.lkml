@@ -66,12 +66,6 @@ explore: erp_orders {
     relationship: many_to_one
   }
 
-  join: recommendations_real_time {
-    type: inner
-    sql_on: ${erp_orders.customer_number} = ${recommendations_real_time.customer_id} ;;
-    relationship: one_to_one
-  }
-
   join: social {
     type: left_outer
     sql_on: ${social.email} = ${customer.email} ;;
@@ -118,5 +112,11 @@ explore: erp_orders {
     type: left_outer
     sql_on: ${stores.store_id} = ${promotion.store_id} ;;
     relationship: many_to_one
+  }
+
+  join: recommendations_real_time {
+    type: inner
+    sql_on: ${erp_orders.customer_number} = ${recommendations_real_time.customer_id} ;;
+    relationship: one_to_one
   }
 }
