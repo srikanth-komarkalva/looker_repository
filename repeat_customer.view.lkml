@@ -2,7 +2,7 @@ view: repeat_customer {
   derived_table: {
     sql:
         SELECT CUSTOMER_NUMBER, Count(ORDER_NUMBER) as ORDER_COUNT,
-        concat(s_contact.first_name," ",s_contact.last_name) as Customer_name
+        concat(s_contact.first_name," ",s_contact.last_name) as customer_name
         FROM `cci-customer-360.cci.ERP_ORDERS` inner join `cci-customer-360.cci.S_CONTACT`
         on `cci-customer-360.cci.ERP_ORDERS`.customer_numbers = `cci-customer-360.cci.S_CONTACT`.customer_id
         GROUP BY 1
@@ -17,7 +17,7 @@ view: repeat_customer {
 
   dimension: customer_name {
     type:  string
-    sql: concat(s_contact.first_name," ",s_contact.last_name) ;;
+    sql: ${TABLE}.customer_name ;;
   }
 
   dimension: order_count {
