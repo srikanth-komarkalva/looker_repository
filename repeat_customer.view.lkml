@@ -5,8 +5,8 @@ view: repeat_customer {
         FROM `cci-customer-360.cci.ERP_ORDERS`
         GROUP BY 1
         HAVING Count(ORDER_NUMBER) > 1;;
-
   }
+
   dimension: customer_number {
     type: number
     primary_key: yes
@@ -16,7 +16,7 @@ view: repeat_customer {
 
   dimension: customer_name {
     type:  string
-    sql: concat(s_concat.first_name," ",s_contact.last_name) ;;
+    sql: concat(s_contact.first_name," ",s_contact.last_name) ;;
   }
 
   dimension: order_count {
