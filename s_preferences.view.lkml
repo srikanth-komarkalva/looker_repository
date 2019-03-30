@@ -72,18 +72,16 @@ view: s_preferences {
     drill_fields: [detail*]
   }
 
-  dimension: Promotion
-  {
-    type: string
-    sql:  if
-    (${TABLE}.Letter_Promotion = "Yes") Or  ( ${TABLE}.Email_Promotion = "Yes") or   (${TABLE}.Phone_Promotion = "Yes") or (${TABLE}.Mobile_Promotion = "Yes") ) then
-    "Promotion Applied"
-    Else
-    "No Promotion"
-    End
-
-    ;;
-    }
+#  dimension: Promotion
+#  {
+#    type: string
+#    sql:  { % if ( ${TABLE}.Letter_Promotion == "Yes" Or ${TABLE}.Email_Promotion == "Yes" or  ${TABLE}.Phone_Promotion == "Yes" or ${TABLE}.Mobile_Promotion == "Yes") % }
+#    "Promotion Applied"
+#    {% else %}
+#    "No Promotion"
+#    {% endif %}
+#   ;;
+#    }
 
 dimension: Promotion_Type {
   type: string
