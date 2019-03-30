@@ -16,9 +16,8 @@ view: valued_customer {
     primary_key: yes
     sql: ${TABLE}.customer_number ;;
   }
-  dimension: total_sale_amount {
-
-    type: number
+  measure: total_sale_amount {
+    type: sum
     sql: ${TABLE}.total_sale_amount ;;
   }
 }
