@@ -26,8 +26,7 @@ view: repeat_customer {
 
   set: detail {
     fields: [
-      customer_number,
-      s_contact.first_name
+      customer_name
     ]
   }
 
