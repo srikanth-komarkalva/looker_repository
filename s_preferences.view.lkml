@@ -83,16 +83,11 @@ view: s_preferences {
 #   ;;
 #    }
 
-dimension: Promotion_Type {
-  type: string
+dimension: Promotion_Type
+{
   sql: case
-       when ${TABLE}.Letter_Promotion = "Yes" then "Letter"
-      when ${TABLE}.Email_Promotion = "Yes" then "Email"
-      when ${TABLE}.Phone_Promotion = "Yes" then "Phone"
-      when ${TABLE}.Mobile_Promotion = "Yes" then "Mobile"
-      ELSE
-      "Walk-In"
-      end
+  when ${TABLE}.Letter_Promotion = 'Yes' THEN 'Letter'
+  END
 
   ;;
 
