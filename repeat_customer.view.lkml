@@ -11,6 +11,13 @@ view: repeat_customer {
     primary_key: yes
     sql: ${TABLE}.customer_number ;;
   }
+
+  dimension: customer_name {
+    type:  string
+    sql: concat(s_contact.first_name," ",s_contact.last_name) ;;
+
+  }
+
   dimension: order_count {
     type: number
     sql: ${TABLE}.order_count ;;
