@@ -3,7 +3,7 @@ view: repeat_customer {
     sql:
         SELECT CUSTOMER_NUMBER, Count(ORDER_NUMBER) as ORDER_COUNT,
         concat(s_contact.first_name," ",s_contact.last_name) as customer_name
-        FROM `cci-customer-360.cci.ERP_ORDERS` inner join `cci-customer-360.cci.S_CONTACT`
+        FROM `cci-customer-360.cci.ERP_ORDERS` inner join `cci-customer-360.cci.S_CONTACT` s_contact
         on `cci-customer-360.cci.ERP_ORDERS`.customer_numbers = `cci-customer-360.cci.S_CONTACT`.customer_id
         GROUP BY 1
         HAVING Count(ORDER_NUMBER) > 1;;
