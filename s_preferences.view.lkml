@@ -89,7 +89,7 @@ dimension: Promotion_Type {
   type: string
   sql: case
        when ${TABLE}.Letter_Promotion = "Yes" then "Letter"
-      when ${TABLE}.Email_Promotion = "Yes" then  "Email"
+      when ${TABLE}.Email_Promotion = "Yes" then "Email"
       when ${TABLE}.Phone_Promotion = "Yes" then "Phone"
       when ${TABLE}.Mobile_Promotion = "Yes" then "Mobile"
       ELSE
