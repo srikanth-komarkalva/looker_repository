@@ -6,6 +6,12 @@ view: recommendations_real_time {
     sql: ${TABLE}.customer_id ;;
   }
 
+dimension: customer_name {
+  type:  string
+  sql: s_contact.first_name ;;
+
+}
+
   dimension: products {
     type: string
     sql: ${TABLE}.Products ;;
