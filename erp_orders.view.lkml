@@ -126,36 +126,6 @@ view: erp_orders {
     sql: ${TABLE}.BOOKED_DATE ;;
   }
 
-  dimension: booked_flag {
-    type: yesno
-    sql: ${TABLE}.BOOKED_FLAG ;;
-  }
-
-  dimension: booked_flag_1 {
-    type: yesno
-    sql: ${TABLE}.BOOKED_FLAG_1 ;;
-  }
-
-  dimension: bypass_sch_flag {
-    type: string
-    sql: ${TABLE}.BYPASS_SCH_FLAG ;;
-  }
-
-  dimension: calculate_price_flag {
-    type: string
-    sql: ${TABLE}.CALCULATE_PRICE_FLAG ;;
-  }
-
-  dimension: cancelled_flag {
-    type: yesno
-    sql: ${TABLE}.CANCELLED_FLAG ;;
-  }
-
-  dimension: cancelled_flag_1 {
-    type: yesno
-    sql: ${TABLE}.CANCELLED_FLAG_1 ;;
-  }
-
   dimension: cancelled_quantity {
     type: number
     sql: ${TABLE}.CANCELLED_QUANTITY ;;
@@ -713,164 +683,7 @@ view: erp_orders {
     sql: ${TABLE}.IB_OWNER_1 ;;
   }
 
-  dimension: industry_attribute1 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE1 ;;
-  }
 
-  dimension: industry_attribute10 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE10 ;;
-  }
-
-  dimension: industry_attribute11 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE11 ;;
-  }
-
-  dimension: industry_attribute12 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE12 ;;
-  }
-
-  dimension: industry_attribute13 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE13 ;;
-  }
-
-  dimension: industry_attribute14 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE14 ;;
-  }
-
-  dimension: industry_attribute15 {
-    type: number
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE15 ;;
-  }
-
-  dimension: industry_attribute16 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE16 ;;
-  }
-
-  dimension: industry_attribute17 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE17 ;;
-  }
-
-  dimension: industry_attribute18 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE18 ;;
-  }
-
-  dimension: industry_attribute19 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE19 ;;
-  }
-
-  dimension_group: industry_attribute2 {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE2 ;;
-  }
-
-  dimension: industry_attribute20 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE20 ;;
-  }
-
-  dimension: industry_attribute21 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE21 ;;
-  }
-
-  dimension: industry_attribute22 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE22 ;;
-  }
-
-  dimension: industry_attribute23 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE23 ;;
-  }
-
-  dimension: industry_attribute24 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE24 ;;
-  }
-
-  dimension: industry_attribute25 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE25 ;;
-  }
-
-  dimension: industry_attribute26 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE26 ;;
-  }
-
-  dimension: industry_attribute27 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE27 ;;
-  }
-
-  dimension: industry_attribute28 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE28 ;;
-  }
-
-  dimension: industry_attribute29 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE29 ;;
-  }
-
-  dimension: industry_attribute3 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE3 ;;
-  }
-
-  dimension: industry_attribute30 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE30 ;;
-  }
-
-  dimension: industry_attribute4 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE4 ;;
-  }
-
-  dimension: industry_attribute5 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE5 ;;
-  }
-
-  dimension: industry_attribute6 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE6 ;;
-  }
-
-  dimension: industry_attribute7 {
-    type: number
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE7 ;;
-  }
-
-  dimension: industry_attribute8 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE8 ;;
-  }
-
-  dimension: industry_attribute9 {
-    type: string
-    sql: ${TABLE}.INDUSTRY_ATTRIBUTE9 ;;
-  }
 
   dimension: industry_context {
     type: string
@@ -1633,81 +1446,6 @@ view: erp_orders {
   dimension: retrobill_request_id {
     type: string
     sql: ${TABLE}.RETROBILL_REQUEST_ID ;;
-  }
-
-  dimension: return_attribute1 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE1 ;;
-  }
-
-  dimension: return_attribute10 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE10 ;;
-  }
-
-  dimension: return_attribute11 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE11 ;;
-  }
-
-  dimension: return_attribute12 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE12 ;;
-  }
-
-  dimension: return_attribute13 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE13 ;;
-  }
-
-  dimension: return_attribute14 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE14 ;;
-  }
-
-  dimension: return_attribute15 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE15 ;;
-  }
-
-  dimension: return_attribute2 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE2 ;;
-  }
-
-  dimension: return_attribute3 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE3 ;;
-  }
-
-  dimension: return_attribute4 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE4 ;;
-  }
-
-  dimension: return_attribute5 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE5 ;;
-  }
-
-  dimension: return_attribute6 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE6 ;;
-  }
-
-  dimension: return_attribute7 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE7 ;;
-  }
-
-  dimension: return_attribute8 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE8 ;;
-  }
-
-  dimension: return_attribute9 {
-    type: string
-    sql: ${TABLE}.RETURN_ATTRIBUTE9 ;;
   }
 
   dimension: return_context {
@@ -2481,6 +2219,11 @@ view: erp_orders {
   measure: order_count {
     type: count_distinct
     sql: ${order_number} ;;
+  }
+
+  measure: customer_count {
+    type: count_distinct
+    sql: ${customer_number} ;;
   }
 
   # ----- Sets of fields for drilling ------
