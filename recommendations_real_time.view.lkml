@@ -8,7 +8,7 @@ view: recommendations_real_time {
 
 dimension: customer_name {
   type:  string
-  sql: s_contact.first_name ;;
+  sql: concat(s_contact.first_name," ",s_contact.last_name) ;;
 
 }
 
