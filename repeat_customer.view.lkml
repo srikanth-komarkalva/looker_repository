@@ -1,15 +1,18 @@
 view: repeat_customer {
   derived_table: {
     sql:
-        SELECT CUSTOMER_NUMBER, Count(ORDER_NUMBER) as ORDER_COUNT
-        FROM `cci-customer-360.cci.ERP_ORDERS`
+        SELECT CUSTOMER_NUMBER, Count(ORDER_NUMBER) as ORDER_COUNT,
+        concat(s_contact.first_name," ",s_contact.last_name) as Customer_name
+        FROM `cci-customer-360.cci.ERP_ORDERS` inner join `cci-customer-360.cci.S_CONTACT`
+        on `cci-customer-360.cci.ERP_ORDERS`.customer_numbers = `cci-customer-360.cci.S_CONTACT`.customer_id
         GROUP BY 1
         HAVING Count(ORDER_NUMBER) > 1;;
   }
   dimension: customer_number {
     type: number
     primary_key: yes
-    sql: ${TABLE}.customer_number ;;
+    sql: ${TABLE}.customer_number
+    drill_fields: [detail*];;
   }
 
   dimension: customer_name {
@@ -19,8 +22,9 @@ view: repeat_customer {
 
   dimension: order_count {
     type: number
-    sql: ${TABLE}.order_count ;;
-    drill_fields: [detail*]
+    sql: ${TABLE}.order_count
+    drill_fields: [detail*];;
+
   }
 
   set: detail {
