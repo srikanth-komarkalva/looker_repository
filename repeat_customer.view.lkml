@@ -22,6 +22,7 @@ view: repeat_customer {
     fields: [
       s_contact.first_name,
       s_contact.last_name,
+      s_contact.customer_full_name,
       s_contact.customer_since
     ]
   }
