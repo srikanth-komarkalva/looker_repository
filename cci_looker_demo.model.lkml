@@ -103,15 +103,15 @@ explore: erp_orders {
   }
 
   join: repeat_customer {
-    type:  left_outer
+    type:  inner
     sql_on: ${repeat_customer.customer_number} = ${erp_orders.customer_number}  ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
   join: valued_customer {
-    type:  left_outer
+    type:  inner
     sql_on: ${valued_customer.customer_number} = ${erp_orders.customer_number}  ;;
-    relationship: many_to_one
+    relationship: one_to_one
   }
 
 
