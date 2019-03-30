@@ -7,7 +7,6 @@ view: repeat_customer {
         HAVING Count(ORDER_NUMBER) > 1;;
   }
   dimension: customer_number {
-
     type: number
     primary_key: yes
     sql: ${TABLE}.customer_number ;;
@@ -20,6 +19,7 @@ view: repeat_customer {
 
   set: detail {
     fields: [
+      customer_number,
       s_contact.first_name
     ]
   }
