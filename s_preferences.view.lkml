@@ -75,8 +75,7 @@ view: s_preferences {
   dimension: Promotion
   {
     type: string
-    sql:  if (${TABLE}.Letter_Promotion = "Yes" Or ${TABLE}.Email_Promotion = "Yes" or  ${TABLE}.Phone_Promotion = "Yes" or ${TABLE}.Mobile_Promotion = "Yes")
-    then
+    sql:  if ( ${TABLE}.Letter_Promotion = "Yes" Or ${TABLE}.Email_Promotion = "Yes" or  ${TABLE}.Phone_Promotion = "Yes" or ${TABLE}.Mobile_Promotion = "Yes")
     "Promotion Applied"
     Else
     "No Promotion"
