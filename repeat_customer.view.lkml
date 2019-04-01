@@ -11,6 +11,7 @@ view: repeat_customer {
     type: number
     primary_key: yes
     sql: ${TABLE}.customer_number;;
+    drill_fields: [detail*]
   }
 
   dimension: customer_name {
@@ -27,7 +28,7 @@ view: repeat_customer {
   }
 
   set: detail {
-    fields: [customer_name]
+    fields: [customer_number]
   }
 
 }
