@@ -15,7 +15,7 @@ explore: erp_orders {
   always_filter: {
     filters: {
       field: ga_all.channel_group
-      value: "null"
+      value: "∅"
     }
   }
   join: crm_ga_bridge {
