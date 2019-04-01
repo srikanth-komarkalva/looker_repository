@@ -15,10 +15,9 @@ explore: erp_orders {
   always_filter: {
     filters: {
       field: ga_all.channel_group
-      value: "NULL"
+      value: "null"
     }
   }
-
   join: crm_ga_bridge {
     type:  left_outer
     sql_on: ${erp_orders.customer_number} = ${crm_ga_bridge.customer_id}  ;;
