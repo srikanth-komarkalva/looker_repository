@@ -42,12 +42,6 @@ view: s_contact {
     sql: ${TABLE}.customer_id ;;
   }
 
-  dimension: customername {
-    type: string
-    sql:  concat(${TABLE}.first_name," ",${TABLE}.last_name) ;;
-
-  }
-
   dimension_group: customer_since {
     type: time
     timeframes: [
