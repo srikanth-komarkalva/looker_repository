@@ -18,14 +18,10 @@ view: s_addr_per {
     sql: ${TABLE}.customer_id ;;
   }
 
-  dimension: latitude {
-    type: number
-    sql: ${TABLE}.latitude ;;
-  }
-
-  dimension: longitude {
-    type: number
-    sql: ${TABLE}.longitude ;;
+  dimension: customer_location {
+    type: location
+    sql_latitude: ${TABLE}.latitude;;
+    sql_longitude: ${TABLE}.longitude;;
   }
 
   dimension: phone {
@@ -44,8 +40,8 @@ view: s_addr_per {
   }
 
   dimension: state {
-    type: string
     sql: ${TABLE}.state ;;
+    map_layer_name: us_states
   }
 
   dimension: street_address {

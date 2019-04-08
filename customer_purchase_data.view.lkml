@@ -48,7 +48,7 @@ view: customer_purchase_data {
   }
 
   dimension: customer_id {
-    type: string
+    type: number
     # hidden: yes
     sql: ${TABLE}.customerId ;;
   }

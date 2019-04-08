@@ -40,6 +40,7 @@ view: s_contact {
     type: number
     # hidden: yes
     sql: ${TABLE}.customer_id ;;
+    drill_fields: [detail*]
   }
 
   dimension_group: customer_since {
@@ -125,6 +126,12 @@ view: s_contact {
   dimension: last_name {
     type: string
     sql: ${TABLE}.last_name ;;
+  }
+
+  dimension: customer_full_name {
+    type: string
+    sql: ${first_name} + ${last_name} ;;
+    drill_fields: [detail*]
   }
 
   dimension_group: last_updated {

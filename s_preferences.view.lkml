@@ -72,6 +72,32 @@ view: s_preferences {
     drill_fields: [detail*]
   }
 
+#  dimension: Promotion
+#  {
+#    type: string
+#    sql:  { % if ( ${TABLE}.Letter_Promotion == "Yes" Or ${TABLE}.Email_Promotion == "Yes" or  ${TABLE}.Phone_Promotion == "Yes" or ${TABLE}.Mobile_Promotion == "Yes") % }
+#    "Promotion Applied"
+#    {% else %}
+#    "No Promotion"
+#    {% endif %}
+#   ;;
+#    }
+
+dimension: Promotion_Type
+{
+  sql: case
+  when ${TABLE}.Letter_Promotion is true THEN 'Letter'
+  when ${TABLE}.Email_Promotion is true THEN 'Email'
+  when ${TABLE}.Mobile_Promotion is true THEN 'Mobile'
+  when ${TABLE}.Phone_Promotion is true THEN 'Phone'
+  ELSE 'Walk-in'
+  END
+
+  ;;
+
+}
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
