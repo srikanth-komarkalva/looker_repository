@@ -5,7 +5,7 @@ include: "*.view"
 
 datagroup: product_recommendation_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "0 hour"
 }
 
 persist_with: product_recommendation_default_datagroup
