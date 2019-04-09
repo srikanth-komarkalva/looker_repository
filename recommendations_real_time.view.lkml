@@ -1,6 +1,6 @@
-view: recommendations_real_time {
+view: recommendations_real_time
+{
   sql_table_name: CCI_AIABIGDATA.RECOMMENDATIONS_REAL_TIME ;;
-
   dimension: customer_id {
     type: number
     sql: ${TABLE}.customer_id ;;
