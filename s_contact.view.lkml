@@ -128,9 +128,9 @@ view: s_contact {
     sql: ${TABLE}.last_name ;;
   }
 
-  dimension: customer_full_name {
+  dimension: customername {
     type: string
-    sql: ${first_name} + ${last_name} ;;
+    sql:concat(${first_name}," ",${last_name});;
     drill_fields: [detail*]
   }
 
