@@ -5,7 +5,7 @@ include: "*.view"
 
 datagroup: cci_looker_demo_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "0 hours"
+  max_cache_age: "1 hours"
 }
 
 persist_with: cci_looker_demo_default_datagroup
